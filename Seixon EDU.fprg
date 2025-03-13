@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Seixon EDU"/>
+        <attribute name="authors" value="T1DEV-T2"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-20 04:56:36 "/>
+        <attribute name="created" value="VDFERVYtVDI7REVTS1RPUC0zQk5WSTM0OzIwMjUtMDItMTM7IjA0OjM1OjQxICI7Mjc2Mg=="/>
+        <attribute name="edited" value="VDFERVYtVDI7REVTS1RPUC0zQk5WSTM0OzIwMjUtMDItMjA7IjA0OjU2OjM2ICI7NzsyODgx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="sim" type="String" array="False" size=""/>
+            <declare name="frequ&#234;ncia" type="Real" array="False" size=""/>
+            <declare name="nota1" type="Real" array="False" size=""/>
+            <declare name="nota2" type="Real" array="False" size=""/>
+            <declare name="nota3" type="Real" array="False" size=""/>
+            <declare name="M&#233;dia" type="Real" array="False" size=""/>
+            <output expression="&quot;Ol&#225;. Seja bem-vindo a calculadora de m&#233;dias escolares Seixon EDU&quot;" newline="True"/>
+            <output expression="&quot;Antes de come&#231;ar, voc&#234; tem alguma dispensa disciplinar?&quot;" newline="True"/>
+            <input variable="sim"/>
+            <if expression="sim == &quot;sim&quot;">
+                <then>
+                    <output expression="&quot;Entendido. Sua dispensa disciplinar foi aprovada. Muito obrigado por usar a C.M.E.S.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Entendido. Agora, digite a porcentagem de frequ&#234;ncia que foi a escola.&quot;" newline="True"/>
+                    <input variable="frequ&#234;ncia"/>
+                    <if expression="frequ&#234;ncia &gt;= 75">
+                        <then>
+                            <output expression="&quot;Certo. Sua frequ&#234;ncia foi maior ou igual a 75%. Com isso, podemos passar para o c&#225;lculo de suas notas.&quot;" newline="True"/>
+                            <output expression="&quot;AVISO! A nossa calculadora funciona da seguinte forma: Caso tenha tirado, por exemplo, 9, ele seria 90. Ou seja 9 = 90 ou 4,5 = 45.&quot;" newline="True"/>
+                            <output expression="&quot;Primeiro, coloque sua nota pr&#225;tica (Por exemplo, dos vistos do caderno e livro).&quot;" newline="True"/>
+                            <do expression="nota1 &lt;= 0 || nota1 &gt; 100">
+                                <input variable="nota1"/>
+                                <if expression="nota1 &lt;= 0 || nota1 &gt; 100">
+                                    <then>
+                                        <output expression="&quot;Erro de digita&#231;&#227;o. Digite novamente a sua nota, de forma correta.&quot;" newline="True"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </do>
+                            <output expression="&quot;Agora, digite sua nota oral (Por exemplo, das apresenta&#231;&#245;es ou semin&#225;rios).&quot;" newline="True"/>
+                            <do expression="nota2 &lt;= 0 || nota2 &gt; 100">
+                                <input variable="nota2"/>
+                                <if expression="nota2 &lt;= 0 || nota2 &gt; 100">
+                                    <then>
+                                        <output expression="&quot;Erro de digita&#231;&#227;o. Digite novamente a sua nota, de forma correta.&quot;" newline="True"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </do>
+                            <output expression="&quot;Por fim, digite as notas pr&#225;ticas (Por exemplo, as notas das provas).&quot;" newline="True"/>
+                            <do expression="nota3 &lt;= 0 || nota3 &gt; 100">
+                                <input variable="nota3"/>
+                                <if expression="nota3 &lt;= 0 || nota3 &gt; 100">
+                                    <then>
+                                        <output expression="&quot;Erro de digita&#231;&#227;o. Digite novamente a sua nota, de forma correta.&quot;" newline="True"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </do>
+                            <assign variable="m&#233;dia" expression="(nota1+nota2+nota3)/3"/>
+                            <output expression="&quot;Sua m&#233;dia &#233; &quot; &amp;m&#233;dia&amp; &quot;.&quot;" newline="True"/>
+                            <if expression="m&#233;dia &gt;= 70 &amp;&amp; m&#233;dia &lt;= 100">
+                                <then>
+                                    <output expression="&quot;Voc&#234; foi aprovado. Parab&#233;ns por passar de ano!&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="m&#233;dia &gt;= 40 &amp;&amp; m&#233;dia &lt; 70">
+                                        <then>
+                                            <output expression="&quot;Voc&#234; foi reprovado. Estude mais para conseguir aprender aquilo que perdeu. Boa sorte!&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="m&#233;dia &lt; 40">
+                                                <then>
+                                                    <output expression="&quot;Voc&#234; n&#227;o foi aprovado. Infelizmente, voc&#234; n&#227;o poder&#225; passar de ano. Mais sorte e estudo na pr&#243;xima vez!&quot;" newline="True"/>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Infelizmente, sua frequ&#234;ncia &#233; menor que 75%. Ou seja, voc&#234; n&#227;o poder&#225; ser aprovado.&quot;" newline="True"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;Muito obrigado por usar a C.M.E.S. Esperemos sua pr&#243;xima visita.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
